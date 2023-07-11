@@ -8,6 +8,7 @@ import Header from "./components/Header/Header";
 import ResultsTable from "./components/ResultsTable/ResultsTable";
 import UserInput from "./components/UserInput/UserInput";
 import AddUser from "./components/Users/AddUser";
+import UsersList from "./components/Users/UsersList";
 
 import "./App.css";
 
@@ -124,6 +125,7 @@ const App = () => {
       </div>
       <div>
         <AddUser />
+        <UsersList users={[]} />
       </div>
     </div>
   );
