@@ -46,6 +46,7 @@ const App = () => {
   ]);
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
   const [userInput, setUserInput] = useState(null);
+  const [usersList, setUsersList] = useState([]);
 
   const calculateHandler = (userInput) => {
     setUserInput(userInput);
@@ -102,6 +103,15 @@ const App = () => {
     });
   };
 
+  const addUserHandler = (uName, uAge) => {
+    setUsersList((prevUsersList) => {
+      return [
+        ...prevUsersList,
+        { name: uName, age: uAge, id: Math.random().toString() },
+      ];
+    });
+  };
+
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
@@ -124,8 +134,8 @@ const App = () => {
         )}
       </div>
       <div>
-        <AddUser />
-        <UsersList users={[]} />
+        <AddUser onAddUser={addUserHandler} />
+        <UsersList users={usersList} />
       </div>
     </div>
   );
