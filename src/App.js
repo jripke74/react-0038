@@ -7,6 +7,7 @@ import CourseInput from "./components/CourseInput/CourseInput";
 import Header from "./components/Header/Header";
 import ResultsTable from "./components/ResultsTable/ResultsTable";
 import UserInput from "./components/UserInput/UserInput";
+import AddUser from "./components/Users/AddUser";
 
 import "./App.css";
 
@@ -120,6 +121,9 @@ const App = () => {
             initialInvestment={userInput["current-savings"]}
           />
         )}
+      </div>
+      <div>
+        <AddUser />
       </div>
     </div>
   );
